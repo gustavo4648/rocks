@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😎ROCK SUR😎</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        #imageContainer {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        #yes, #no {
+            font-size: 5vw;
+            padding: 1vw 2vw;
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            #yes, #no {
+                font-size: 10vw;
+                padding: 2vw 4vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background-color: rgb(5, 5, 5); font-size: 16px; position: relative; overflow: hidden;">
+        <div style="text-align: center; max-width: 90%;">
+            <h1 style="color: white; font-size: 30px;"> TE ESPERAMOS?</h1>
+            <div style="width: 100%; max-width: 400px; margin: 0 auto; position: relative;" id="imageContainer">
+                <a href="https://ibb.co/1LWcGzH">
+                    <img src="https://i.ibb.co/37ZKmRt/Whats-App-Image-2023-08-21-at-7-58-14-PM.jpg" alt="Whats-App-Image-2023-08-21-at-7-58-14-PM" border="0" id="movingImage" style="width: 100%; border-radius: 5%;">
+                </a>
+            </div>
+            <div style="margin-top: 10px;">
+                <button id="yes">SI</button>
+                <button id="no">NO</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const botonSi = document.getElementById('yes');
+        const botonNo = document.getElementById('no');
+        const movingImage = document.getElementById('movingImage');
+        
+        const seremosNovios = () => {
+            alert('😎 HOY Y PARA TI SIEMPRE CONTIGO ✌️ ');
+            alert('UNA NUEVA EXPERIENCIA😎 VEN SIGUEME😉');
+            location.href = 'https://www.facebook.com/100069653197338/videos/257407547186760?__so__=permalink';
+        }
+        
+        const toggleButtonAnimation = () => {
+            const enlargedFontSize = 5.5;
+            
+            if (botonSi.style.fontSize === enlargedFontSize + 'vw') {
+                botonSi.style.transform = 'scale(1)';
+                botonNo.style.transform = 'scale(1)';
+                botonSi.style.fontSize = '5vw';
+                botonNo.style.fontSize = '5vw';
+            } else {
+                botonSi.style.transform = 'scale(1.2)';
+                botonNo.style.transform = 'scale(1.2)';
+                botonSi.style.fontSize = enlargedFontSize + 'vw';
+                botonNo.style.fontSize = enlargedFontSize + 'vw';
+            }
+            
+            const randomColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            botonSi.style.backgroundColor = randomColor;
+            botonNo.style.backgroundColor = randomColor;
+        }
+        
+        const evitarClick = () => {
+            botonNo.style.position = 'absolute';
+            botonNo.style.top = (Math.random() * (window.innerHeight - 25)) + 'px';
+            botonNo.style.left = (Math.random() * (window.innerWidth - 25)) + 'px';
+        }
+
+        botonSi.addEventListener('click', seremosNovios);
+        botonNo.addEventListener('mouseover', evitarClick);
+        movingImage.addEventListener('click', (event) => event.preventDefault());
+        setInterval(toggleButtonAnimation, 500);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
